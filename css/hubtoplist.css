@@ -20,6 +20,7 @@
 	font-size: 1rem;
 	font-weight: 500;
 	min-height: 500px;
+	color: var(--hubtoplist-color-black);
 }
 
 /** CSS for hubtoplist plugin - Multiple elements **/
@@ -36,19 +37,23 @@
 
 /** Helpers - Padding **/
 .hubtoplist-paddingY {
-	padding: 0.5rem 0;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 }
 
 .hubtoplist-paddingY--x2 {
-	padding: 1rem 0;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
 .hubtoplist-paddingX {
-	padding: 0 0.5rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 }
 
 .hubtoplist-paddingX--x2 {
-	padding: 0 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 .hubtoplist-paddingXY {
@@ -87,7 +92,7 @@
 	font-weight: 500;
 	line-height: normal;
 	transition: all 0.3s ease-in-out;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 .hubTopList a::after {
@@ -142,7 +147,7 @@
 
 /** CSS for hubtoplist plugin - __data-header **/
 .hubTopList__data-header {
-	font-weight: 500;
+	font-weight: 700;
 	background-color: var(--hubtoplist-color-brown);
 }
 
@@ -185,8 +190,8 @@
 	font-size: 1rem;
 	background-color: var(--hubtoplist-color-green);
 	color: white;
-	min-width: 100px;
-	border-radius: 5px;
+	min-width: 150px;
+	border-radius: 10px;
 	text-transform: uppercase;
 }
 

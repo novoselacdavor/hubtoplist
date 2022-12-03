@@ -1,6 +1,6 @@
 (function(){
 	// API url
-	const apiURL = window.location.origin + '/hubtoplist/wp-json/wp/v2/hub-top-list';
+	const apiURL = window.location.origin + '/wp-json/wp/v2/hub-top-list';
 	
 	// Get api data
 	async function getAPI(url) {
@@ -43,7 +43,7 @@
 		// Looping through all elements of passed apiData, storing values and rendering them
 		apiData.forEach((el) => {
 			// Api data vars
-			let reviewURL 	= window.location.origin + `/hubtoplist/${el.brand_id}`,
+			let reviewURL 	= window.location.origin + `/${el.brand_id}`,
 				logo 		= el.logo ? el.logo : 'No logo.',
 				rating 		= el.info.rating ? el.info.rating : 'No rating.',
 				bonus 		= el.info.bonus ? el.info.bonus : 'No bonus.',
