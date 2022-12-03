@@ -1,0 +1,51 @@
+/*
+* CSS for hubtoplist plugin
+*/
+
+/** CSS for hubtoplist plugin - Vars **/
+:root {
+	--hubtoplist-color-brown: #d29f36;
+}
+/** CSS for hubtoplist plugin - Helpers **/
+.hubtoplist-paddingY {
+	padding: 0.5rem 0;
+}
+.hubtoplist-paddingY--x2 {
+	padding: 1rem 0;
+}
+.hubtoplist-paddingX {
+	padding: 0 0.5rem;
+}
+.hubtoplist-paddingX--x2 {
+	padding: 0 1rem;
+}
+.hubtoplist-paddingXY {
+	padding: 0.5rem;
+}
+.hubtoplist-paddingXY--x2 {
+	padding: 1rem;
+}
+
+/** CSS for hubtoplist plugin - Main wrapper **/
+.hubTopList {
+	max-width: var(--wp--style--global--wide-size) !important;
+}
+
+/** CSS for hubtoplist plugin - Multiple elements **/
+.hubTopList__data-header,
+.hubTopList__data-main {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/** CSS for hubtoplist plugin - __data-header **/
+.hubTopList__data-header {
+	background-color: var(--hubtoplist-color-brown);
+}
+
+/** CSS for hubtoplist plugin - __entry **/
+.hubTopList__entry:not(:first-of-type) .hubTopList__data-header {
+	display: none;
+}
+
+/** CSS for hubtoplist plugin - Responsive **/

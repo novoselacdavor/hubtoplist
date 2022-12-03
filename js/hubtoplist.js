@@ -63,21 +63,41 @@
 
 				// Loop through features and return list of features
 				features.forEach((feature) => {
-					featuresData += `<p>${feature}</p>`;
+					featuresData += `<p><span>&#10003;</span>${feature}</p>`;
 				});
 
 				return featuresData;
 			}
 
+			// Render star icons method
+			function renderStars(numOfStars) {
+				// Vars
+				let filledStar 	= '<span class="star__icon--filled">&#9733;</span>',
+					emptyStar  	= '<span class="star__icon--empty">&#9734;</span>',
+					stars  		= '',
+					counter 	= 1;
+
+				// While loop will run 5 times ( 5 stars ) and based on rating will print out stars
+				while(counter <= 5) {
+					// We are checking for rating and based on it's value printing stars
+					counter <= numOfStars ? stars += filledStar : stars += emptyStar
+					// We have to increase our counter each time
+					counter++;
+				}
+
+				// We are returning star icons
+				return stars;
+			}
+
 			// Return entry with data for each entry in passed apiData
 			return entry += `<div class="hubTopList__entry">
-				<header class="hubTopList__data-header">
+				<header class="hubTopList__data-header hubtoplist-paddingXY--x2">
 				    <div>Casino</div>
 				    <div>Bonus</div>
 				    <div>Features</div>
 				    <div>Play</div>
 				</header>
-				<div class="hubTopList__data-main">
+				<div class="hubTopList__data-main hubtoplist-paddingXY--x2">
 					<div class="hubTopList__entry-casino">
 						<p>
 							<a href="${reviewURL}">
@@ -90,7 +110,7 @@
 					</div>
 					<div class="hubTopList__entry-bonus">
 						<p>
-							${rating}&#9734; &#9733;
+							${renderStars(rating)}
 						</p>
 						<p>
 							${bonus}
