@@ -72,8 +72,8 @@
 			// Render star icons method
 			function renderStars(numOfStars) {
 				// Vars
-				let filledStar 	= '<span class="star__icon--filled">&#9733;</span>',
-					emptyStar  	= '<span class="star__icon--empty">&#9734;</span>',
+				let filledStar 	= '<span class="star__icon star__icon--filled">&#9733;</span>',
+					emptyStar  	= '<span class="star__icon star__icon--empty">&#9734;</span>',
 					stars  		= '',
 					counter 	= 1;
 
@@ -92,15 +92,15 @@
 			// Return entry with data for each entry in passed apiData
 			return entry += `<div class="hubTopList__entry">
 				<header class="hubTopList__data-header hubtoplist-paddingXY--x2">
-				    <div>Casino</div>
-				    <div>Bonus</div>
-				    <div>Features</div>
-				    <div>Play</div>
+				    <div class="hubtoplist-alignCenter">Casino</div>
+				    <div class="hubtoplist-alignCenter">Bonus</div>
+				    <div class="hubtoplist-alignCenter">Features</div>
+				    <div class="hubtoplist-alignCenter">Play</div>
 				</header>
 				<div class="hubTopList__data-main hubtoplist-paddingXY--x2">
-					<div class="hubTopList__entry-casino">
+					<div class="hubTopList__entry-casino hubtoplist-alignCenter">
 						<p>
-							<a href="${reviewURL}">
+							<a href="${reviewURL}" class="hubTopList__entry-img">
 								<img src="${logo}" alt="img-for-brandid-${el.brand_id}" />
 							</a>
 						</p>
@@ -108,7 +108,7 @@
 							<a href="${reviewURL}">Review</a>
 						</p>
 					</div>
-					<div class="hubTopList__entry-bonus">
+					<div class="hubTopList__entry-bonus hubtoplist-alignCenter">
 						<p>
 							${renderStars(rating)}
 						</p>
@@ -119,9 +119,9 @@
 					<div class="hubTopList__entry-features">
 						${renderFeatures(features)}
 					</div>
-					<div class="hubTopList__entry-play">
+					<div class="hubTopList__entry-play hubtoplist-alignCenter">
 						<p>
-							<a href="${playURL}">Play Now</a>
+							<a href="${playURL}" class="hubTopList__entry-play--button hubtoplist-paddingXY--x2">Play Now</a>
 						</p>
 						<p>
 							${terCon}

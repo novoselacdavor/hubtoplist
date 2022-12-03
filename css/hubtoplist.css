@@ -4,31 +4,92 @@
 
 /** CSS for hubtoplist plugin - Vars **/
 :root {
+	--hubtoplist-color-black: #1a1a1a;
+	--hubtoplist-color-blue: #204871;
+	--hubtoplist-color-red: #751c17;
+	--hubtoplist-color-green: #0e6d2b;
 	--hubtoplist-color-brown: #d29f36;
+	--hubtoplist-color-gray: #b1b1b1;
 }
 /** CSS for hubtoplist plugin - Helpers **/
+
+/** Helpers - Padding **/
 .hubtoplist-paddingY {
 	padding: 0.5rem 0;
 }
+
 .hubtoplist-paddingY--x2 {
 	padding: 1rem 0;
 }
+
 .hubtoplist-paddingX {
 	padding: 0 0.5rem;
 }
+
 .hubtoplist-paddingX--x2 {
 	padding: 0 1rem;
 }
+
 .hubtoplist-paddingXY {
 	padding: 0.5rem;
 }
+
 .hubtoplist-paddingXY--x2 {
 	padding: 1rem;
+}
+
+/** Helpers - Align **/
+.hubtoplist-alignLeft {
+	text-align: left;
+}
+
+.hubtoplist-alignCenter {
+	text-align: center;
+}
+
+.hubtoplist-alignRight {
+	text-align: right;
+}
+
+/** CSS for hubtoplist plugin - General **/
+.hubTopList a {
+	position: relative;
+	font-weight: 500;
+	line-height: normal;
+	transition: all 0.3s ease-in-out;
+	text-decoration: none;
+}
+
+.hubTopList a::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: -2px;
+	display: block;
+	width: 0;
+	height: 2px;
+	background: none repeat scroll 0 0 transparent;
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.hubTopList a:hover::after {
+	width: 100%;
+	left: 0;
+}
+
+.hubTopList p {
+	margin: 0;
+}
+
+.hubTopList p + p {
+	margin-top: 0.5rem;
 }
 
 /** CSS for hubtoplist plugin - Main wrapper **/
 .hubTopList {
 	max-width: var(--wp--style--global--wide-size) !important;
+	font-size: 1rem;
+	font-weight: 500;
 }
 
 /** CSS for hubtoplist plugin - Multiple elements **/
@@ -36,16 +97,71 @@
 .hubTopList__data-main {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 2rem;
+	align-items: center;
 }
 
 /** CSS for hubtoplist plugin - __data-header **/
 .hubTopList__data-header {
+	font-weight: 500;
 	background-color: var(--hubtoplist-color-brown);
 }
 
 /** CSS for hubtoplist plugin - __entry **/
+.hubTopList__entry:not(:first-of-type) {
+	border-top: 2px solid var(--hubtoplist-color-gray);
+}
+
 .hubTopList__entry:not(:first-of-type) .hubTopList__data-header {
 	display: none;
+}
+
+/** __entry - Casino **/
+.hubTopList__entry-casino a {
+	color: var(--hubtoplist-color-blue) !important;
+}
+
+.hubTopList__entry-casino a:not(.hubTopList__entry-img)::after {
+	background: var(--hubtoplist-color-blue);
+}
+
+/** __entry - Bonus **/
+.hubTopList__entry-bonus .star__icon {
+	color: var(--hubtoplist-color-brown);
+	font-size: 2rem;
+}
+
+/** __entry - Features **/
+.hubTopList__entry-features span {
+	margin-right: 0.5rem;
+}
+
+/** __entry - Play **/
+.hubTopList__entry-play {
+	font-size: 0.75rem;
+}
+
+.hubTopList__entry-play .hubTopList__entry-play--button {
+	display: inline-block;
+	font-size: 1rem;
+	background-color: var(--hubtoplist-color-green);
+	color: white;
+	min-width: 100px;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+
+.hubTopList__entry-play .hubTopList__entry-play--button:hover {
+	filter: brightness(1.25);
+}
+
+.hubTopList__entry-play a:not(.hubTopList__entry-play--button) {
+	color: var(--hubtoplist-color-red) !important;
+	font-size: 0.75rem;
+}
+
+.hubTopList__entry-play a:not(.hubTopList__entry-play--button)::after {
+	background: var(--hubtoplist-color-red);
 }
 
 /** CSS for hubtoplist plugin - Responsive **/
