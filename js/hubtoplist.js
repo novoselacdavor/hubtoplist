@@ -91,7 +91,7 @@
 
 			// Return entry with data for each entry in passed apiData
 			return entry += `<div class="hubTopList__entry">
-				<header class="hubTopList__data-header hubtoplist-paddingXY--x2">
+				<header class="hubTopList__data-header hubtoplist-paddingXY--x2 hubtoplist-showAboveTablet">
 				    <div class="hubtoplist-alignCenter">Casino</div>
 				    <div class="hubtoplist-alignCenter">Bonus</div>
 				    <div class="hubtoplist-alignCenter">Features</div>
@@ -99,6 +99,7 @@
 				</header>
 				<div class="hubTopList__data-main hubtoplist-paddingXY--x2">
 					<div class="hubTopList__entry-casino hubtoplist-alignCenter">
+						<div class="hubTopList__data-header hubtoplist-paddingXY--x2 hubtoplist-alignCenter hubtoplist-hideAboveTablet">Casino</div>
 						<p>
 							<a href="${reviewURL}" class="hubTopList__entry-img">
 								<img src="${logo}" alt="img-for-brandid-${el.brand_id}" />
@@ -109,6 +110,7 @@
 						</p>
 					</div>
 					<div class="hubTopList__entry-bonus hubtoplist-alignCenter">
+						<div class="hubTopList__data-header hubtoplist-paddingXY--x2 hubtoplist-alignCenter hubtoplist-hideAboveTablet">Bonus</div>
 						<p>
 							${renderStars(rating)}
 						</p>
@@ -117,9 +119,11 @@
 						</p>
 					</div>
 					<div class="hubTopList__entry-features">
+						<div class="hubTopList__data-header hubtoplist-paddingXY--x2 hubtoplist-alignCenter hubtoplist-hideAboveTablet">Features</div>
 						${renderFeatures(features)}
 					</div>
 					<div class="hubTopList__entry-play hubtoplist-alignCenter">
+						<div class="hubTopList__data-header hubtoplist-paddingXY--x2 hubtoplist-alignCenter hubtoplist-hideAboveTablet">Play</div>
 						<p>
 							<a href="${playURL}" class="hubTopList__entry-play--button hubtoplist-paddingXY--x2">Play Now</a>
 						</p>

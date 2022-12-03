@@ -12,6 +12,26 @@
 	--hubtoplist-color-gray: #b1b1b1;
 	--hubtoplist-color-darkgray: #919191;
 }
+
+/** CSS for hubtoplist plugin - Main wrapper **/
+.hubTopList {
+	position: relative;
+	max-width: var(--wp--style--global--wide-size) !important;
+	font-size: 1rem;
+	font-weight: 500;
+	min-height: 500px;
+}
+
+/** CSS for hubtoplist plugin - Multiple elements **/
+.hubTopList__data-header,
+.hubTopList__data-main {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+	align-items: flex-start;
+	margin-bottom: 1rem;
+}
+
 /** CSS for hubtoplist plugin - Helpers **/
 
 /** Helpers - Padding **/
@@ -52,6 +72,15 @@
 	text-align: right;
 }
 
+/** Helpers - Media Query **/
+.hubtoplist-hideAboveTablet {
+	display: block;
+}
+
+.hubtoplist-showAboveTablet {
+	display: none;
+}
+
 /** CSS for hubtoplist plugin - General **/
 .hubTopList a {
 	position: relative;
@@ -84,24 +113,6 @@
 
 .hubTopList p + p {
 	margin-top: 0.5rem;
-}
-
-/** CSS for hubtoplist plugin - Main wrapper **/
-.hubTopList {
-	position: relative;
-	max-width: var(--wp--style--global--wide-size) !important;
-	font-size: 1rem;
-	font-weight: 500;
-	min-height: 500px;
-}
-
-/** CSS for hubtoplist plugin - Multiple elements **/
-.hubTopList__data-header,
-.hubTopList__data-main {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	gap: 2rem;
-	align-items: center;
 }
 
 /** CSS for hubtoplist plugin - Loader **/
@@ -165,7 +176,7 @@
 }
 
 /** __entry - Play **/
-.hubTopList__entry-play {
+.hubTopList__entry-play p {
 	font-size: 0.75rem;
 }
 
@@ -193,6 +204,39 @@
 }
 
 /** CSS for hubtoplist plugin - Responsive **/
+@media screen and (min-width: 480px) {
+	.hubTopList__data-header,
+	.hubTopList__data-main {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.hubTopList__data-entry {
+		margin: 2rem 0;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.hubtoplist-hideAboveTablet {
+		display: none;
+	}
+
+	.hubtoplist-showAboveTablet {
+		display: grid;
+	}
+
+	.hubTopList__data-header,
+	.hubTopList__data-main {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		align-items: center;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	.hubTopList__data-main {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
 
 /** CSS for hubtoplist plugin - Animations **/
 @keyframes Rotate {
