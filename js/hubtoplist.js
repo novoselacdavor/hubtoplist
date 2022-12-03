@@ -1,7 +1,8 @@
-(function($){
+(function(){
 	// API url
 	const apiURL = window.location.origin + '/hubtoplist/wp-json/wp/v2/hub-top-list';
 	
+	// Get api data
 	async function getAPI(url) {
 		// Storing response
 	    const apiResponse = await fetch(url);
@@ -22,7 +23,6 @@
 	        // Call render method and pass api data
 	        render(data.toplists[575]);
 	    }
-	    console.log(data.toplists[575]);
 	}
 
 	// Call getAPI to get the data
@@ -135,4 +135,4 @@
 		document.getElementsByClassName('hubTopList__entries')[0].innerHTML = entry;
 	}
 
-})(jQuery);
+})();

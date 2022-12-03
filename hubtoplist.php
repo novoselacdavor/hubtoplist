@@ -50,7 +50,9 @@ class HubTopList {
     public function load_hubTopList() {
         return '
             <section class="hubTopList">
-                <div class="hubTopList__loading" style="display:block;"></div>
+                <div class="hubTopList__loading">
+                    <div class="hubTopList__loader"></div>
+                </div>
                 <div class="hubTopList__data">
                     <main class="hubTopList__entries"></main>
                 </div>

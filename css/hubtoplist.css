@@ -10,6 +10,7 @@
 	--hubtoplist-color-green: #0e6d2b;
 	--hubtoplist-color-brown: #d29f36;
 	--hubtoplist-color-gray: #b1b1b1;
+	--hubtoplist-color-darkgray: #919191;
 }
 /** CSS for hubtoplist plugin - Helpers **/
 
@@ -87,9 +88,11 @@
 
 /** CSS for hubtoplist plugin - Main wrapper **/
 .hubTopList {
+	position: relative;
 	max-width: var(--wp--style--global--wide-size) !important;
 	font-size: 1rem;
 	font-weight: 500;
+	min-height: 500px;
 }
 
 /** CSS for hubtoplist plugin - Multiple elements **/
@@ -99,6 +102,31 @@
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	gap: 2rem;
 	align-items: center;
+}
+
+/** CSS for hubtoplist plugin - Loader **/
+.hubTopList__loading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.1);
+	z-index: 9999;
+}
+.hubTopList__loading.hidden {
+	display: none;
+}
+.hubTopList__loader {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--hubtoplist-color-gray);
+    border-top-color: var(--hubtoplist-color-darkgray);
+    border-radius: 50%;
+    animation: Rotate 1.2s linear 0s infinite forwards;
 }
 
 /** CSS for hubtoplist plugin - __data-header **/
@@ -165,3 +193,14 @@
 }
 
 /** CSS for hubtoplist plugin - Responsive **/
+
+/** CSS for hubtoplist plugin - Animations **/
+@keyframes Rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
